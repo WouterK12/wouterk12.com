@@ -74,6 +74,8 @@ nav.purple {
 .tabs {
   display: flex;
 
+  margin-left: 5px;
+
   transition: opacity 0.6s, transform 0.5s;
 }
 .tab,
@@ -90,6 +92,9 @@ nav.purple {
 .hamburger:hover {
   background-color: rgb(36, 0, 56);
   cursor: pointer;
+}
+.tab.selected {
+  border-bottom: 5px solid rgb(36, 0, 56);
 }
 /* HAMBURGER */
 .hamburger {
@@ -186,8 +191,10 @@ article {
 section {
   min-height: 300px;
 
-  margin-top: 10vh;
   padding: 15px;
+  margin-top: 10vh;
+  margin-left: 30px;
+  margin-right: 30px;
 
   border-radius: 15px;
   border: 1px solid rgba(0, 0, 0, 0.1);
