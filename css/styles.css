@@ -2,6 +2,17 @@
   section {
     min-width: 850px;
   }
+
+  .hamburger {
+    display: none;
+  }
+}
+@media (max-width: 900px) {
+  .tabs {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(-100%);
+  }
 }
 @media (max-width: 900px) and (min-width: 500px) {
   .logo {
@@ -55,8 +66,11 @@ nav.home {
 /* TABS */
 .tabs {
   display: flex;
+
+  transition: opacity 0.6s, transform 0.5s;
 }
-.tab {
+.tab,
+.hamburger {
   color: #fff;
 
   padding: 15px;
@@ -65,8 +79,14 @@ nav.home {
 
   transition: background-color 0.2s;
 }
-.tab:hover {
+.tab:hover,
+.hamburger:hover {
   background-color: rgb(36, 0, 56);
+  cursor: pointer;
+}
+/* HAMBURGER */
+.hamburger {
+  content: url(/icons/hamburger.svg);
 }
 
 /* HOME */
@@ -86,6 +106,8 @@ nav.home {
   );
 }
 .logo {
+  margin-bottom: 15vh;
+
   transition: opacity 0.3s;
 
   object-fit: contain;
@@ -97,6 +119,8 @@ nav.home {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+
+  margin: 0;
 
   opacity: 0;
 
