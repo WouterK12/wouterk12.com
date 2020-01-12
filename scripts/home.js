@@ -2,16 +2,17 @@ ScrollReveal().reveal("section");
 
 // const nav = document.querySelector("nav");
 const drop = document.querySelector(".drop .icon");
-const logoNav = document.querySelector("nav .logo.nav");
-
 const scrollTo = document.querySelector(".scroll");
+
+const logo = document.querySelector(".start .logo");
+const logoNav = document.querySelector("nav .logo.nav");
 
 drop.addEventListener("click", () => {
   scrollTo.scrollIntoView({ behavior: "smooth", block: "start" });
 });
 
 $(window).scroll(function() {
-  scrollToPos = scrollTo.getBoundingClientRect();
+  scrollToPos = logo.getBoundingClientRect();
   if (scrollToPos.top <= 0) {
     logoNav.style.opacity = "1";
     logo.style.opacity = "0";
