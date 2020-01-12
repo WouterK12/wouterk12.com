@@ -22,8 +22,15 @@
   }
 }
 
+html {
+  font-family: "Open Sans", sans-serif;
+}
 body {
   margin: 0;
+}
+a {
+  color: #000;
+  text-decoration: none;
 }
 
 /* SCROLLBAR */
@@ -34,16 +41,32 @@ body {
 /* NAV */
 nav {
   display: flex;
-  justify-content: center;
+  align-items: center;
 
   position: sticky;
   top: 0;
   z-index: 10;
 
-  max-height: 60px;
+  height: 60px;
 }
 nav.home {
   background: #000;
+}
+/* TABS */
+.tabs {
+  display: flex;
+}
+.tab {
+  color: #fff;
+
+  padding: 15px;
+
+  border-radius: 5px;
+
+  transition: background-color 0.2s;
+}
+.tab:hover {
+  background-color: rgb(36, 0, 56);
 }
 
 /* HOME */
@@ -69,9 +92,15 @@ nav.home {
   content: url(/images/logo.png);
 }
 .logo.nav {
+  flex: 1 0 auto;
+
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+
   opacity: 0;
 
-  height: 60px;
+  width: 200px;
 }
 /* Drip (dripping effect) */
 .drip {
