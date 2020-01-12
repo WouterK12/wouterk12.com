@@ -6,6 +6,7 @@ const scrollTo = document.querySelector(".scroll");
 const logo = document.querySelector(".start .logo");
 const logoNav = document.querySelector("nav .logo.nav");
 
+const nav = document.querySelector("nav.home");
 const ham = document.querySelector(".hamburger");
 const tabs = document.querySelector(".tabs");
 
@@ -24,9 +25,10 @@ function OnMediaChange(mediaQuery) {
 
 // DROP BUTTON
 drop.addEventListener("click", () => {
-  scrollTo.scrollIntoView({ behavior: "smooth", block: "start" });
+  scrollTo.scrollIntoView({ behavior: "smooth", block: "center" });
 });
 
+// HAMBURGER MENU
 ham.addEventListener("click", () => {
   GetLogoInfo();
   if (tabs.style.opacity != 0) {
@@ -40,6 +42,7 @@ ham.addEventListener("click", () => {
   }
 });
 
+// HIDE OR SHOW TABS
 function HideTabs() {
   tabs.style.opacity = 0;
   tabs.style.pointerEvents = "none";
@@ -51,6 +54,7 @@ function ShowTabs() {
   tabs.style.transform = "unset";
 }
 
+// HIDE OR SHOW NAVLOGO
 function HideNavLogo() {
   logoNav.style.opacity = 0;
   logoNav.style.zIndex = -1;
@@ -60,15 +64,19 @@ function ShowNavLogo() {
   logoNav.style.zIndex = "unset";
 }
 
+// GET (MAIN) LOGO INFO
 function GetLogoInfo() {
   scrollToPos = logo.getBoundingClientRect();
 }
 
+// ON SCROLL
 $(window).scroll(function() {
   GetLogoInfo();
   if (scrollToPos.top <= 0) {
     ShowNavLogo();
     logo.style.opacity = 0;
+
+    nav.classList.add("purple");
 
     drop.style.opacity = 0;
     drop.style.zIndex = -1;
@@ -76,6 +84,8 @@ $(window).scroll(function() {
   } else {
     HideNavLogo();
     logo.style.opacity = 1;
+
+    nav.classList.remove("purple");
 
     drop.style.opacity = 1;
     drop.style.zIndex = "unset";
