@@ -73,6 +73,17 @@ nav.home {
 
   height: 60px;
 }
+/* Drip (dripping effect) */
+.drip {
+  position: absolute;
+  width: 100%;
+
+  transform: translateY(-1px);
+
+  content: url(/images/pages/rounded.svg);
+}
+
+/* Drop (auto-scroll) */
 .drop {
   display: flex;
   justify-content: center;
