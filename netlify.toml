@@ -1,6 +1,6 @@
 [[redirects]]
   from = "https://shop.wouterk12.com/*"
-  to = "https://dns.craftingstore.net/:splat"
+  to = "https://wouterk12.craftingstore.net/:splat"
   status = 200
   force = true
-  headers = {Host = "shop.wouterk12.com"}
+  headers = {Host = "wouterk12.craftingstore.net"}
