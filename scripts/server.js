@@ -12,7 +12,7 @@ setInterval(function() {
 var url = "https://api.mcsrvstat.us/2/play.wouterk12.com";
 $.getJSON(url, function(r) {
   if (!r.online) {
-    $("#status").html("Server Offline");
+    $("#status").html("<span class='offline'>Server Offline");
     return false;
   }
   var pl = "";

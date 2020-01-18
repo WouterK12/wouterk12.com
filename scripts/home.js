@@ -10,16 +10,6 @@ drop.addEventListener("click", () => {
   scrollTo.scrollIntoView({ behavior: "smooth", block: "center" });
 });
 
-// HIDE OR SHOW NAVLOGO
-function HideNavLogo() {
-  logoNav.style.opacity = 0;
-  logoNav.style.zIndex = -1;
-}
-function ShowNavLogo() {
-  logoNav.style.opacity = 1;
-  logoNav.style.zIndex = "unset";
-}
-
 // GET (MAIN) LOGO INFO
 function GetLogoInfo() {
   scrollToPos = logo.getBoundingClientRect();

@@ -4,6 +4,8 @@ const logoNav = document.querySelector("nav .logo.nav");
 const ham = document.querySelector(".hamburger");
 const tabs = document.querySelector(".tabs");
 
+const navHome = document.querySelector("nav.home");
+
 // SHOW OR HIDE TABS ON @MEDIA CHANGE
 var mediaQuery = window.matchMedia("(min-width: 900px)");
 OnMediaChange(mediaQuery);
@@ -19,15 +21,25 @@ function OnMediaChange(mediaQuery) {
 
 // HAMBURGER MENU
 ham.addEventListener("click", () => {
-  GetLogoInfo();
-  if (tabs.style.opacity != 0) {
-    if (scrollToPos.top <= 0) {
-      ShowNavLogo();
+  if (navHome) {
+    GetLogoInfo();
+    if (tabs.style.opacity != 0) {
+      if (scrollToPos.top <= 0) {
+        ShowNavLogo();
+      }
+      HideTabs();
+    } else {
+      HideNavLogo();
+      ShowTabs();
     }
-    HideTabs();
   } else {
-    HideNavLogo();
-    ShowTabs();
+    if (tabs.style.opacity != 0) {
+      ShowNavLogo();
+      HideTabs();
+    } else {
+      HideNavLogo();
+      ShowTabs();
+    }
   }
 });
 
@@ -41,4 +53,14 @@ function ShowTabs() {
   tabs.style.opacity = 1;
   tabs.style.pointerEvents = "unset";
   tabs.style.transform = "unset";
+}
+
+// HIDE OR SHOW NAVLOGO
+function HideNavLogo() {
+  logoNav.style.opacity = 0;
+  logoNav.style.zIndex = -1;
+}
+function ShowNavLogo() {
+  logoNav.style.opacity = 1;
+  logoNav.style.zIndex = "unset";
 }

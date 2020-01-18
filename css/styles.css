@@ -154,6 +154,9 @@ nav.purple {
 .start.server .info .ip {
   font-weight: bold;
 }
+.start.server .info .offline {
+  color: rgb(173, 0, 0);
+}
 .start.server .info .status {
   display: flex;
   flex-direction: column;
@@ -202,7 +205,7 @@ nav.purple {
   content: url(/images/pages/rounded.svg);
 }
 .drip.stroke {
-  top: 55px;
+  top: 50px;
   content: url(/images/pages/rounded_stroke.svg);
 }
 .drip.home {
