@@ -6,14 +6,22 @@
   .hamburger {
     display: none;
   }
+  .drip {
+    width: 110%;
+  }
 
   .start.server .info .ip {
     font-size: 50px;
   }
 }
-@media (max-width: 900px) {
+@media (max-width: 900px) and (min-width: 500px) {
   .logo {
+    width: 400px;
     margin-bottom: 20vh;
+  }
+
+  section {
+    min-width: 400px;
   }
 
   .tabs {
@@ -21,22 +29,12 @@
     pointer-events: none;
     transform: translateX(-100%);
   }
+  .drip {
+    width: 150%;
+  }
 
   .start.server .info .ip {
     font-size: 40px;
-  }
-}
-@media (max-width: 900px) and (min-width: 500px) {
-  .logo {
-    width: 400px;
-  }
-
-  section {
-    min-width: 400px;
-  }
-
-  .start.server .info .ip {
-    font-size: 35px;
   }
 }
 @media (max-width: 500px) {
@@ -51,6 +49,20 @@
   .start.server .info .ip {
     font-size: 25px;
   }
+
+  .drip {
+    width: 210%;
+  }
+}
+@media (max-width: 400px) {
+  .start.server .info .status .motd {
+    font-size: 12px;
+  }
+}
+@media (max-width: 320px) {
+  .start.server .info .status .motd {
+    font-size: 10px;
+  }
 }
 
 html {
@@ -58,6 +70,7 @@ html {
 }
 body {
   margin: 0;
+  overflow-x: hidden;
 }
 a {
   color: #000;
@@ -148,11 +161,11 @@ nav.purple {
   color: #fff;
   font-family: "Poppins", sans-serif;
   background-color: rgba(0, 0, 0, 0.3);
-
-  transition: font-size 0.2s;
 }
 .start.server .info .ip {
   font-weight: bold;
+
+  transition: font-size 0.2s;
 }
 .start.server .info .offline {
   color: rgb(173, 0, 0);
@@ -198,7 +211,7 @@ nav.purple {
 .drip {
   position: absolute;
   top: 60px;
-  width: 100%;
+  left: -15px;
 
   transform: translateY(-1px);
 

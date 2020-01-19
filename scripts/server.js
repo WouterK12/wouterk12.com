@@ -16,9 +16,6 @@ $.getJSON(url, function(r) {
     return false;
   }
   var pl = "";
-  if (r.players.online > 0) {
-    pl = "<span>Online Players: " + r.players.list[0];
-  }
   var motd = r.motd.html.toString().replace(/,/g, "-");
   $("#status").html(
     "<div class='software'><b>" +
@@ -30,8 +27,7 @@ $.getJSON(url, function(r) {
       motd +
       "</div>" +
       "<span><b>Players Online:</b> " +
-      r.players.online +
-      pl
+      r.players.online
   );
   $("#icon").attr("src", r.icon);
 });
