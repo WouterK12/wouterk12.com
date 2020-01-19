@@ -7,7 +7,7 @@ setInterval(function() {
     .fadeIn(1000)
     .end()
     .appendTo("#bg");
-}, 5000);
+}, 7000);
 
 var url = "https://api.mcsrvstat.us/2/play.wouterk12.com";
 $.getJSON(url, function(r) {
