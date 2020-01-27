@@ -99,6 +99,9 @@ nav {
 nav.home {
   background: #000;
 }
+nav.map {
+  position: unset;
+}
 nav.purple {
   background: rgb(112, 0, 172);
 }
@@ -138,7 +141,7 @@ nav.purple {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: calc(100vh - 60px);
 
   background: linear-gradient(
     rgb(0, 0, 0),
@@ -147,6 +150,13 @@ nav.purple {
     rgb(87, 0, 134),
     rgb(112, 0, 172)
   );
+}
+.start.server iframe {
+  position: absolute;
+  bottom: 0;
+
+  width: 100%;
+  height: calc(100vh - 60px);
 }
 .start.server > img {
   position: absolute;
