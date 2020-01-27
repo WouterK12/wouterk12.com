@@ -6,7 +6,7 @@
   headers = {Host = "wouterk12.craftingstore.net"}
 [[redirects]]
   from = "https://map.wouterk12.com/*"
-  to = "https://play.wouterk12.com:25569/:splat"
+  to = "http://play.wouterk12.com:25569/:splat"
   status = 200
   force = true
   headers = {Host = "play.wouterk12.com:25569"}
