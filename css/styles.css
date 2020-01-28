@@ -148,7 +148,7 @@ nav.purple {
     rgb(112, 0, 172)
   );
 }
-.start.server .map {
+.start.server > .map {
   position: absolute;
 
   width: 100%;
