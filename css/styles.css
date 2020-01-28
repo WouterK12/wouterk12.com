@@ -99,9 +99,6 @@ nav {
 nav.home {
   background: #000;
 }
-nav.map {
-  position: unset;
-}
 nav.purple {
   background: rgb(112, 0, 172);
 }
@@ -151,9 +148,9 @@ nav.purple {
     rgb(112, 0, 172)
   );
 }
-.start.server iframe {
+.start.server .map {
   position: absolute;
-  bottom: 0;
+  top: 60px;
 
   width: 100%;
   height: calc(100vh - 60px);

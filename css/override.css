@@ -1,0 +1,32 @@
+html {
+  width: unset;
+  height: unset;
+}
+body {
+  height: unset;
+
+  font-family: unset;
+  font-size: unset;
+
+  color: unset;
+  background: unset;
+
+  padding: unset;
+}
+
+.start.server .map {
+  font-size: 11px;
+  color: #fff;
+
+  background: #000;
+}
+
+#mcmap {
+  position: absolute;
+  top: 60px;
+
+  height: calc(100vh - 60px);
+}
+.dynmap {
+  height: unset;
+}
