@@ -213,8 +213,14 @@ nav.purple {
 
   width: 200px;
 }
+.logo.nav:hover {
+  cursor: pointer;
+}
 .logo.nav.home {
   opacity: 0;
+}
+.logo.nav.home:hover {
+  cursor: unset;
 }
 /* Drip (dripping effect) */
 .drip {

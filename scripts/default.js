@@ -43,6 +43,13 @@ ham.addEventListener("click", () => {
   }
 });
 
+// LOGO NAV
+logoNav.addEventListener("click", () => {
+  if (!navHome) {
+    document.location.href = "/";
+  }
+});
+
 // HIDE OR SHOW TABS
 function HideTabs() {
   tabs.style.opacity = 0;
