@@ -195,7 +195,7 @@ nav.purple {
   transition: font-size 0.2s;
 }
 .start.server .info .offline {
-  color: rgb(173, 0, 0);
+  color: #ff6d6d;
 }
 .start.server .info .status {
   display: flex;
@@ -419,4 +419,38 @@ section .social a {
 }
 .more-content .ig a:hover {
   background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* FOOTER */
+/* DISCORD */
+.discord {
+  display: flex;
+  position: fixed;
+  bottom: 22px;
+  right: 100px;
+  z-index: 2;
+
+  color: #fff;
+}
+.discord .info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.discord .arrow {
+  margin-left: 10px;
+  content: url(/icons/arrow.svg);
+
+  animation: point 2.5s infinite;
+}
+@keyframes point {
+  0% {
+    transform: unset;
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  100% {
+    transform: unset;
+  }
 }
