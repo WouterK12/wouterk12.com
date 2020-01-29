@@ -13,6 +13,14 @@
   .start.server .info .ip {
     font-size: 50px;
   }
+
+  .social .more {
+    opacity: 0;
+  }
+  .more-content .yt iframe {
+    width: 560px;
+    height: 315px;
+  }
 }
 @media (max-width: 900px) and (min-width: 500px) {
   .logo {
@@ -21,7 +29,7 @@
   }
 
   section {
-    min-width: 400px;
+    width: 90%;
   }
 
   .tabs {
@@ -36,6 +44,11 @@
   .start.server .info .ip {
     font-size: 40px;
   }
+
+  .more-content .yt iframe {
+    width: 450px;
+    height: 253px;
+  }
 }
 @media (max-width: 500px) {
   .logo {
@@ -43,7 +56,7 @@
   }
 
   section {
-    min-width: 300px;
+    width: 80%;
   }
 
   .start.server .info .ip {
@@ -52,6 +65,11 @@
 
   .drip {
     width: 210%;
+  }
+
+  .more-content .yt iframe {
+    width: 250px;
+    height: 140px;
   }
 }
 @media (max-width: 400px) {
@@ -281,7 +299,7 @@ article {
 }
 
 section {
-  min-height: 300px;
+  min-height: 200px;
 
   padding: 15px;
   margin-top: 10vh;
@@ -300,4 +318,105 @@ section .title {
 
   font-family: "Poppins", sans-serif;
   font-size: 40px;
+}
+
+section .social {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+section .social > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-bottom: 15px;
+}
+section .social > div:not(:last-child) {
+  margin-right: 30px;
+}
+section .social a {
+  height: 48px;
+}
+.social .yt {
+  content: url(/icons/social/yt.svg);
+}
+.social .tw {
+  content: url(/icons/social/tw.svg);
+}
+.social .st {
+  content: url(/icons/social/st.svg);
+}
+.social .gh {
+  content: url(/icons/social/gh.svg);
+}
+.social .ig {
+  content: url(/icons/social/ig.svg);
+}
+.social .more {
+  text-transform: uppercase;
+  color: #fff;
+
+  margin-top: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.2);
+
+  transition: opacity 0.2s, background-color 0.2s, transform 0.7s;
+}
+.social .more:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+.social .more.hover {
+  opacity: 1;
+}
+.social .more.show {
+  opacity: 1;
+  pointer-events: unset;
+}
+.social .more.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+.social .more.close {
+  transform: rotateZ(180deg);
+}
+
+.more-content {
+  display: flex;
+  justify-content: center;
+
+  margin-bottom: 30px;
+}
+.more-content > div {
+  display: none;
+}
+.more-content .yt.show {
+  display: block;
+}
+.more-content .ig {
+  font-family: "Poppins", sans-serif;
+  flex-direction: column;
+
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.more-content .ig.show {
+  display: flex;
+}
+.more-content .ig a {
+  color: #fff;
+
+  padding-left: 5px;
+  padding-right: 5px;
+
+  border-radius: 5px;
+
+  transition: background-color 0.2s;
+}
+.more-content .ig a:hover {
+  background-color: rgba(0, 0, 0, 0.4);
 }
