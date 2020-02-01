@@ -197,6 +197,17 @@ nav.purple {
     rgb(112, 0, 172)
   );
 }
+.start.error {
+  flex-direction: column;
+  color: #fff;
+  font-size: 20px;
+
+  background: rgb(112, 0, 172);
+}
+.start.error .title {
+  font-size: 40px;
+  font-weight: bold;
+}
 .start.server > .map {
   position: absolute;
 
@@ -354,7 +365,6 @@ section .title {
 section .social {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
 }
 section .social > div {
   display: flex;

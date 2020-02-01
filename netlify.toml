@@ -8,3 +8,7 @@
   from = "https://map.wouterk12.com/*"
   to = "http://play.wouterk12.com:25569/:splat"
   force = true
+[[redirects]]
+  from = "/*"
+  to = "/error.html"
+  status = 404
