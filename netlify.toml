@@ -18,4 +18,4 @@
     Set-Cookie = '''
     HttpOnly,
     Secure,
-    SameSite=Strict'''
+    SameSite=none Secure'''
