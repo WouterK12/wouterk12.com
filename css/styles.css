@@ -368,16 +368,16 @@ section .title {
 section .social {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 15px;
 }
 section .social > div {
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  margin-bottom: 15px;
-}
-section .social > div:not(:last-child) {
-  margin-right: 30px;
+  margin: 15px;
+  margin-top: unset;
 }
 section .social a {
   height: 48px;
