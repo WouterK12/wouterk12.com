@@ -12,3 +12,10 @@
   from = "/*"
   to = "/error.html"
   status = 404
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Set-Cookie = '''
+    HttpOnly,
+    Secure,
+    SameSite=Strict'''
