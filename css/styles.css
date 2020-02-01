@@ -121,6 +121,9 @@ body {
   position: relative;
   overflow-x: hidden;
 }
+.wrapper.fixed {
+  overflow-y: hidden;
+}
 a {
   color: #000;
   text-decoration: none;
