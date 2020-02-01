@@ -17,5 +17,5 @@
   [headers.values]
     Set-Cookie = '''
     HttpOnly,
-    Secure,
-    SameSite=Strict'''
+    SameSite=None,
+    Secure'''
