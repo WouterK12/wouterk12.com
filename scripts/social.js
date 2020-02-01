@@ -33,11 +33,11 @@ $(".more").click(function() {
     $(this).toggleClass("show");
   } else {
     // Find other buttons, and hide them.
-    $(this)
-      .parents(".social")
-      .find(".more")
-      .toggleClass("hide");
-    $(this).toggleClass("hide");
+    // $(this)
+    //   .parents(".social")
+    //   .find(".more")
+    //   .toggleClass("hide");
+    // $(this).toggleClass("hide");
   }
   // Rotate button (add "close"-class).
   $(this).toggleClass("close");
