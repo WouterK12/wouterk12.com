@@ -364,6 +364,16 @@ section .title {
   font-family: "Poppins", sans-serif;
   font-size: 40px;
 }
+section .context {
+  display: flex;
+  flex-direction: column;
+}
+section .context > span:first-child {
+  margin-top: 15px;
+}
+section .context > span:not(:last-child) {
+  margin-bottom: 15px;
+}
 
 section .social {
   display: flex;
