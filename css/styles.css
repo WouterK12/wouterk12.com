@@ -1,6 +1,12 @@
 @media (min-width: 900px) {
   section {
-    min-width: 850px;
+    width: 850px;
+  }
+  section.item-list {
+    width: 600px;
+  }
+  .item-list-title {
+    font-size: 30px;
   }
 
   .hamburger {
@@ -39,6 +45,9 @@
   section {
     width: 90%;
   }
+  .item-list-title {
+    font-size: 30px;
+  }
 
   .tabs {
     opacity: 0;
@@ -65,6 +74,10 @@
   .discord .info {
     align-items: flex-end;
   }
+
+  .inprogress {
+    width: 60%;
+  }
 }
 @media (max-width: 500px) {
   .logo {
@@ -73,6 +86,9 @@
 
   section {
     width: 80%;
+  }
+  .item-list-title {
+    font-size: 24px;
   }
 
   .start.server .info .ip {
@@ -98,6 +114,10 @@
   }
   .discord .info {
     align-items: flex-start;
+  }
+
+  .inprogress {
+    width: 80%;
   }
 }
 @media (max-width: 400px) {
@@ -348,8 +368,6 @@ section {
 
   padding: 15px;
   margin-top: 10vh;
-  margin-left: 30px;
-  margin-right: 30px;
 
   border-radius: 15px;
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -373,6 +391,46 @@ section .context > span:first-child {
 }
 section .context > span:not(:last-child) {
   margin-bottom: 15px;
+}
+
+section.item-list {
+  min-height: unset;
+
+  padding: unset;
+  margin-top: unset;
+
+  border: unset;
+  box-shadow: unset;
+}
+section.item-list,
+section.item-list .context {
+  display: flex;
+  justify-content: center;
+}
+section.item-list .context {
+  width: 100%;
+}
+section.item-list .item {
+  display: flex;
+  flex-direction: column;
+
+  padding: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+section.item-list .item .title {
+  font-family: inherit;
+  font-size: 20px;
+}
+.item-list-title {
+  margin: 30px;
+  margin-top: 10vh;
+  margin-bottom: 15px;
+
+  font-family: "Poppins", sans-serif;
 }
 
 section .social {
@@ -473,6 +531,26 @@ section .social a {
 }
 .more-content .ig a:hover {
   background-color: rgba(0, 0, 0, 0.4);
+}
+
+.inprogress {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  position: fixed;
+  left: 50vw;
+  top: 50vh;
+  z-index: 2;
+
+  padding: 30px;
+  border-radius: 5px;
+
+  transform: translateX(-50%) translateY(-50%);
+
+  color: #fff;
+  background-color: #ff6d6d;
 }
 
 /* FOOTER */
