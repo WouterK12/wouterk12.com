@@ -14,7 +14,9 @@ mediaQuery.addListener(OnMediaChange);
 function OnMediaChange(mediaQuery) {
   if (mediaQuery.matches) {
     ShowTabs();
-    ShowNavLogo();
+    if (!navHome) {
+      ShowNavLogo();
+    }
   } else {
     HideTabs();
     ShowNavLogo();
