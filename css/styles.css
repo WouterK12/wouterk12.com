@@ -262,6 +262,12 @@ nav.purple {
 .start.server .info .offline {
   color: #ff6d6d;
 }
+.start.server .info .faq a {
+  color: #fff;
+}
+.start.server .info .faq a:hover {
+  text-decoration: underline;
+}
 .start.server .info .status {
   display: flex;
   flex-direction: column;
@@ -420,6 +426,9 @@ section.item-list .item {
 
   border-radius: 5px;
   border: 1px solid rgba(0, 0, 0, 0.1);
+}
+section.item-list .item a:hover {
+  text-decoration: underline;
 }
 section.item-list .item .title {
   font-family: inherit;

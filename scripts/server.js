@@ -13,7 +13,9 @@ var url = "https://api.mcsrvstat.us/2/play.wouterk12.com";
 $.getJSON(url, function(r) {
   if (!r.online) {
     $(".maptab").css("display", "none");
-    $("#status").html("<span class='offline'>Server Offline");
+    $("#status").html(
+      "<span class='offline'>Server Offline</span><span class='faq'>Why? <a href='/faq'>FAQ</a>"
+    );
     return false;
   }
   $(".maptab").css("display", "flex");
