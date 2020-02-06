@@ -19,7 +19,9 @@ function OnMediaChange(mediaQuery) {
     }
   } else {
     HideTabs();
-    ShowNavLogo();
+    if (!navHome) {
+      ShowNavLogo();
+    }
   }
 }
 
