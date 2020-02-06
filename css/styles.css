@@ -75,7 +75,7 @@
     align-items: flex-end;
   }
 
-  .inprogress {
+  .page-status {
     width: 60%;
   }
 }
@@ -116,7 +116,7 @@
     align-items: flex-start;
   }
 
-  .inprogress {
+  .page-status {
     width: 80%;
   }
 }
@@ -533,7 +533,7 @@ section .social a {
   background-color: rgba(0, 0, 0, 0.4);
 }
 
-.inprogress {
+.page-status {
   display: flex;
   flex-direction: column;
   justify-content: center;
