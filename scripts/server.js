@@ -1,13 +1,44 @@
-$("#bg > img:gt(0)").hide();
+var bg;
+var imgs;
+var slideDelay = 5000;
+var c = 0;
+var l;
 
-setInterval(function() {
-  $("#bg > img:first")
-    .fadeOut(1000)
-    .next()
-    .fadeIn(1000)
-    .end()
-    .appendTo("#bg");
-}, 7000);
+window.onload = init;
+
+function init() {
+  bg = document.querySelector(".start.server .bg");
+  imgs = bg.children;
+  l = imgs.length - 1;
+
+  for (i = 0; i <= l; i++) {
+    imgs[i].style.opacity = 0;
+  }
+
+  imgs[0].style.opacity = 1;
+
+  bg.style.opacity = 1;
+
+  setTimeout(function() {
+    AutoSlide();
+  }, slideDelay);
+}
+
+function AutoSlide() {
+  imgs[c].style.opacity = 0;
+
+  if (c < l) {
+    c++;
+  } else {
+    c = 0;
+  }
+
+  imgs[c].style.opacity = 1;
+
+  setTimeout(function() {
+    AutoSlide();
+  }, slideDelay);
+}
 
 var url = "https://api.mcsrvstat.us/2/play.wouterk12.com";
 $.getJSON(url, function(r) {

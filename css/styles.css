@@ -237,8 +237,21 @@ nav.purple {
   width: 100%;
   height: 100%;
 }
-.start.server > img {
+.start.server {
+  background: #000;
+}
+.start.server .bg {
   position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  opacity: 0;
+  transition: opacity 5s;
+}
+.start.server .bg > img {
+  position: absolute;
+  transition: opacity 1s;
 }
 .start.server .info {
   display: flex;
