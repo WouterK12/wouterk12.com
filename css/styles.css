@@ -14,9 +14,11 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  overflow-x: hidden;
   padding: 0;
   margin: 0;
+
+  /* hmmm */
+  overflow-x: hidden;
 }
 @font-face {
   font-family: fredoka;
@@ -56,6 +58,9 @@ nav {
   padding: 5px;
 
   list-style-type: none;
+  clip-path: circle(150vw at 90% -10%);
+  -webkit-clip-path: circle(150vw at 90% -10%);
+  transition: all 0.5s ease-out;
 }
 nav .background {
   position: absolute;
@@ -80,6 +85,48 @@ nav .background.alwaysvisible {
 nav > div {
   display: flex;
 }
+/* HAMBURGER */
+.hamburger {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+
+  padding: 5px 15px;
+  border-radius: 10px;
+
+  color: #fff;
+  transition: background 0.2s;
+}
+.hamburger img {
+  width: 7vw;
+}
+.hamburger span {
+  display: none;
+  font-size: 6vw;
+}
+nav.max .hamburger img {
+  display: none;
+}
+nav.max .hamburger span {
+  display: flex;
+}
+.hamburger:hover {
+  cursor: pointer;
+  background: var(--secondary);
+}
+nav.small .hamburger img {
+  height: 100%;
+  width: unset;
+}
+@media (max-width: 900px) {
+  .hamburger {
+    display: flex;
+  }
+}
+/* TABS */
 nav .tabs a {
   color: #fff;
   text-decoration: none;
@@ -110,6 +157,7 @@ nav .logo {
   font-family: fredoka;
   color: #fff;
   font-size: 30px;
+  cursor: pointer;
 
   transition: opacity 0.2s;
 }
@@ -123,6 +171,51 @@ nav .socials a {
   display: flex;
   align-items: center;
   padding: 3px;
+}
+@media (max-width: 900px) {
+  nav {
+    height: 42px;
+  }
+  nav .tabs,
+  nav .socials {
+    display: none;
+  }
+}
+/* MAX */
+nav.max {
+  height: 100vh;
+  width: 100vw;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+  clip-path: circle(150vh at 90% -10%);
+  -webkit-clip-path: circle(150vh at 90% -10%);
+}
+nav.max .tabs {
+  flex-direction: column;
+  font-size: 7vw;
+}
+nav.max .tabs a {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+nav.max .tabs,
+nav.max .socials {
+  display: flex;
+}
+nav.max .socials img {
+  min-height: 35px;
+  height: 5vw;
+}
+nav.max .socials a {
+  padding: 5px;
+}
+nav.max .logo {
+  display: none;
+}
+nav.max .background {
+  opacity: 1;
 }
 
 /* HOME */
@@ -146,7 +239,7 @@ section.home .logo {
 
   transition: opacity 0.2s, font-size 0.2s;
 }
-@media (max-width: 900px) and (min-width: 500px) { 
+@media (max-width: 900px) {
   section.home .logo {
     font-size: 70px;
   }
@@ -160,13 +253,26 @@ section.home .logo {
 /* CONTENT */
 section.content {
   flex-direction: column;
+  width: 100%;
 }
 section.content .mask {
-  width: 120%;
+  width: 120vw;
+}
+@media (max-width: 900px) {
+  section.content .mask {
+    width: 200vw;
+  }
 }
 section.content > div {
   width: 600px;
   margin-bottom: 350px;
+}
+@media (max-width: 700px) {
+  section.content > div {
+    width: unset;
+    margin: 15px;
+    margin-bottom: 200px;
+  }
 }
 
 /* SERVER */
@@ -188,14 +294,10 @@ section.server .server-info {
 }
 section.server .server-info .ip {
   font-family: fredoka;
+  font-size: 50px;
   transition: font-size 0.2s;
 }
-@media (min-width: 900px) {
-  section.server .server-info .ip {
-    font-size: 50px;
-  }
-}
-@media (max-width: 900px) and (min-width: 500px) {
+@media (max-width: 900px) {
   section.server .server-info .ip {
     font-size: 40px;
   }
@@ -235,26 +337,15 @@ section.server .server-info .status .motd > span {
   position: fixed;
   margin-left: 10px;
   z-index: 2;
+  bottom: 22px;
+  right: 100px;
 
   color: #fff;
 }
-@media (min-width: 900px) {
-  .discord {
-    bottom: 22px;
-    right: 100px;
-  }
-  .discord .info {
-    align-items: flex-end;
-  }
-}
-@media (max-width: 900px) and (min-width: 500px) {
-  .discord {
-    bottom: 22px;
-    right: 100px;
-  }
-  .discord .info {
-    align-items: flex-end;
-  }
+.discord .info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 @media (max-width: 500px) {
   .discord {
@@ -265,10 +356,6 @@ section.server .server-info .status .motd > span {
   .discord .info {
     align-items: flex-start;
   }
-}
-.discord .info {
-  display: flex;
-  flex-direction: column;
 }
 .discord .arrow {
   margin-left: 10px;
