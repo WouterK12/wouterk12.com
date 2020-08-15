@@ -1,6 +1,11 @@
 :root {
   --primary: #984af7;
   --secondary: rgb(145, 145, 255);
+  --gradient: linear-gradient(
+    45deg,
+    rgba(119, 118, 255, 1) 0%,
+    rgba(174, 44, 241, 1) 100%
+  );
 }
 * {
   box-sizing: border-box;
@@ -30,11 +35,7 @@ h1 {
   font-size: 40px;
 
   background: var(--primary);
-  background: linear-gradient(
-    45deg,
-    rgba(119, 118, 255, 1) 0%,
-    rgba(174, 44, 241, 1) 100%
-  );
+  background: var(--gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -71,11 +72,7 @@ nav .background {
   width: 100%;
 
   background: var(--primary);
-  background: linear-gradient(
-    45deg,
-    rgba(119, 118, 255, 1) 0%,
-    rgba(174, 44, 241, 1) 100%
-  );
+  background: var(--gradient);
   opacity: 0;
   transition: opacity 0.2s;
 }
@@ -127,7 +124,8 @@ nav.small .hamburger img {
   }
 }
 /* TABS */
-nav .tabs a {
+nav .tabs a,
+section.content .link-button {
   color: #fff;
   text-decoration: none;
 
@@ -226,11 +224,7 @@ section.home {
 section.home,
 section.server {
   background: var(--primary);
-  background: linear-gradient(
-    45deg,
-    rgba(119, 118, 255, 1) 0%,
-    rgba(174, 44, 241, 1) 100%
-  );
+  background: var(--gradient);
 }
 section.home .logo {
   font-family: fredoka;
@@ -254,6 +248,7 @@ section.home .logo {
 section.content {
   flex-direction: column;
   width: 100%;
+  margin-bottom: 300px;
 }
 section.content .mask {
   width: 120vw;
@@ -265,14 +260,22 @@ section.content .mask {
 }
 section.content > div {
   width: 600px;
-  margin-bottom: 350px;
+  margin-bottom: 50px;
 }
 @media (max-width: 700px) {
+  section.content {
+    margin-bottom: 150px;
+  }
   section.content > div {
     width: unset;
     margin: 15px;
-    margin-bottom: 200px;
   }
+}
+section.content .link-button {
+  background: var(--secondary);
+}
+section.content .link-button:hover {
+  text-decoration: underline;
 }
 
 /* SERVER */
