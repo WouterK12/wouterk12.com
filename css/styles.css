@@ -277,6 +277,23 @@ section.content .link-button {
 section.content .link-button:hover {
   text-decoration: underline;
 }
+section.content .discord-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+  padding: 5px 15px;
+
+  border: 1px solid #eaecef;
+  border-radius: 10px;
+}
+section.content .discord-container a {
+  color: #000;
+  text-decoration: none;
+}
+section.content .discord-container a:hover {
+  text-decoration: underline;
+}
 
 /* SERVER */
 section.server {
