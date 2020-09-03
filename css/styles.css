@@ -251,14 +251,20 @@ section.content {
   margin-bottom: 300px;
 }
 section.content .mask {
+  display: flex;
+  width: 100vw;
+  overflow-x: hidden;
+  transform: translateY(-95%);
+}
+section.content .mask img {
   width: 120vw;
 }
 @media (max-width: 900px) {
-  section.content .mask {
+  section.content .mask img {
     width: 200vw;
   }
 }
-section.content > div {
+section.content > div:not(.mask) {
   width: 600px;
   margin-bottom: 50px;
 }
@@ -266,7 +272,7 @@ section.content > div {
   section.content {
     margin-bottom: 150px;
   }
-  section.content > div {
+  section.content > div:not(.mask) {
     width: unset;
     margin: 15px;
   }
@@ -279,6 +285,7 @@ section.content .link-button:hover {
 }
 section.content .discord-container {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   width: 100%;
 
