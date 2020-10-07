@@ -12,3 +12,7 @@
   from = "/*"
   to = "/error.html"
   status = 404
+[[redirects]]
+  from = "https://amongus.wouterk12.com/"
+  to = "https://discord.gg/rsjXWQc"
+  force = true
