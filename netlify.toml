@@ -14,5 +14,5 @@
   status = 404
 [[redirects]]
   from = "https://amongus.wouterk12.com/*"
-  to = "https://discord.gg/rsjXWQc"
+  to = "https://discord.gg/rsjXWQc/:splat"
   force = true

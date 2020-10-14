@@ -39,8 +39,28 @@
 //     AutoSlide();
 //   }, slideDelay);
 // }
+window.addEventListener("load", () => {
+  const widget = document.querySelector("iframe.hidden");
+  const discordButton = document.querySelector(".discord .icon");
 
-$.getJSON(url, function(r) {
+  discordButton.addEventListener("click", () => {
+    discordButton.style.display = "none";
+    widget.classList.remove("hidden");
+  });
+
+  window.addEventListener("click", (e) => {
+    if (e.target != discordButton && e.target != widget) {
+      HideWidget();
+    }
+  });
+
+  function HideWidget() {
+    discordButton.style.display = "";
+    widget.classList.add("hidden");
+  }
+});
+
+$.getJSON(url, function (r) {
   if (!r.online) {
     $("#status").html(
       "<span class='offline'>Server Offline</span><span class='faq'>Why? <a href='/faq.html'>FAQ</a>"

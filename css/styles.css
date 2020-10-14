@@ -361,15 +361,22 @@ section.server .server-info .status .motd > span {
 /* DISCORD */
 .discord {
   display: flex;
+  justify-content: center;
+  align-items: flex-end;
+
   position: fixed;
   margin-left: 10px;
   z-index: 2;
   bottom: 22px;
-  right: 100px;
+  right: 22px;
 
   color: #fff;
 }
 .discord .info {
+  display: flex;
+  align-items: center;
+}
+.discord .text {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -380,12 +387,12 @@ section.server .server-info .status .motd > span {
     right: 80px;
     font-size: 12px;
   }
-  .discord .info {
+  .discord .text {
     align-items: flex-start;
   }
 }
 .discord .arrow {
-  margin-left: 10px;
+  margin: 0px 10px;
   content: url(/icons/arrow.svg);
 
   animation: point 2.5s infinite;
@@ -400,6 +407,16 @@ section.server .server-info .status .motd > span {
   100% {
     transform: unset;
   }
+}
+.discord .icon {
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+}
+.discord iframe.hidden {
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
 }
 
 /* FAQ */
