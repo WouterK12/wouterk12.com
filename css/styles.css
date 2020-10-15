@@ -384,7 +384,6 @@ section.server .server-info .status .motd > span {
 @media (max-width: 500px) {
   .discord {
     bottom: 10px;
-    right: 80px;
     font-size: 12px;
   }
   .discord .text {
