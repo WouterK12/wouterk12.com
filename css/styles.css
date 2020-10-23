@@ -1,11 +1,14 @@
 :root {
-  --primary: #984af7;
+  /* --primary: #984af7;
   --secondary: rgb(145, 145, 255);
   --gradient: linear-gradient(
     45deg,
     rgba(119, 118, 255, 1) 0%,
     rgba(174, 44, 241, 1) 100%
-  );
+  ); */
+  --primary: #e25a00;
+  --secondary: #ff6c0a;
+  --gradient: linear-gradient(45deg, #ff8533 0%, var(--primary) 100%);
 }
 * {
   box-sizing: border-box;
