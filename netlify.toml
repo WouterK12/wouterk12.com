@@ -1,14 +1,4 @@
 [[redirects]]
-  from = "https://shop.wouterk12.com/*"
-  to = "https://wouterk12.craftingstore.net/:splat"
-  status = 200
-  force = true
-  headers = {Host = "wouterk12.craftingstore.net"}
-[[redirects]]
-  from = "https://map.wouterk12.com/*"
-  to = "http://play.wouterk12.com:25569/:splat"
-  force = true
-[[redirects]]
   from = "/*"
   to = "/error.html"
   status = 404
