@@ -1,6 +1,4 @@
-User-agent: Googlebot
-User-agent: AdsBot-Google
-Disallow: /icons/
-Disallow: /images/
-Disallow /js/
-Disallow /netlify.toml
+User-agent: *
+Disallow: /icons
+Disallow: /images
+Disallow /js

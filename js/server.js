@@ -1,85 +1,47 @@
-// var bg;
-// var imgs;
-// var slideDelay = 5000;
-// var c = 0;
-// var l;
-
-// window.onload = init;
-
-// function init() {
-//   bg = document.querySelector(".start.server .bg");
-//   imgs = bg.children;
-//   l = imgs.length - 1;
-
-//   for (i = 0; i <= l; i++) {
-//     imgs[i].style.opacity = 0;
-//   }
-
-//   imgs[0].style.opacity = 1;
-
-//   bg.style.opacity = 1;
-
-//   setTimeout(function() {
-//     AutoSlide();
-//   }, slideDelay);
-// }
-
-// function AutoSlide() {
-//   imgs[c].style.opacity = 0;
-
-//   if (c < l) {
-//     c++;
-//   } else {
-//     c = 0;
-//   }
-
-//   imgs[c].style.opacity = 1;
-
-//   setTimeout(function() {
-//     AutoSlide();
-//   }, slideDelay);
-// }
 window.addEventListener("load", () => {
-  const widget = document.querySelector("iframe.hidden");
-  const discordButton = document.querySelector(".discord .icon");
+  $.getJSON(url, function (response) {
+    const statusDiv = document.getElementById("status");
+    statusDiv.innerHTML = null;
 
-  discordButton.addEventListener("click", () => {
-    discordButton.style.display = "none";
-    widget.classList.remove("hidden");
-  });
-
-  window.addEventListener("click", (e) => {
-    if (e.target != discordButton && e.target != widget) {
-      HideWidget();
+    if (!response.online) {
+      CreateOfflineStatus(statusDiv);
+      return false;
     }
+
+    CreateOnlineStatus(statusDiv, response);
   });
-
-  function HideWidget() {
-    discordButton.style.display = "";
-    widget.classList.add("hidden");
-  }
 });
 
-$.getJSON(url, function (r) {
-  if (!r.online) {
-    $("#status").html(
-      "<span class='offline'>Server Offline</span><span class='faq'>Why? <a href='/faq.html'>FAQ</a>"
-    );
-    return false;
-  }
-  $(".maptab").css("display", "flex");
-  var motd = r.motd.html.toString().replace(/,/g, "-");
-  $("#status").html(
-    "<div class='software'><b>" +
-      r.version +
-      "</b>(" +
-      r.software +
-      ")</div>" +
-      "<div class='motd'>" +
-      motd +
-      "</div>" +
-      "<span><b>Players Online:</b> " +
-      r.players.online
-  );
-  $("#icon").attr("src", r.icon);
-});
+function CreateOfflineStatus(statusDiv) {
+  const offlineSpan = document.createElement("SPAN");
+  offlineSpan.classList.add("offline");
+  offlineSpan.innerText = "Server Offline";
+  statusDiv.appendChild(offlineSpan);
+
+  const faqSpan = document.createElement("SPAN");
+  faqSpan.classList.add("faq");
+  faqSpan.innerHTML = "Why? <a href='/faq.html'>FAQ</a>";
+  statusDiv.appendChild(faqSpan);
+}
+
+function CreateOnlineStatus(statusDiv, status) {
+  const mapTabLink = document.querySelector(".maptab");
+  mapTabLink.style.display = "flex";
+
+  const softwareDiv = document.createElement("DIV");
+  softwareDiv.classList.add("software");
+  softwareDiv.innerHTML = `<b>${status.version}</b> (${status.software})`;
+  statusDiv.appendChild(softwareDiv);
+
+  const motdDiv = document.createElement("DIV");
+  motdDiv.classList.add("motd");
+  motdDiv.innerHTML = status.motd.html.toString().replace(/,/g, "-");
+  statusDiv.appendChild(motdDiv);
+
+  const playersSpan = document.createElement("SPAN");
+  playersSpan.innerHTML = `<b>Players Online:</b> ${status.players.online}`;
+  statusDiv.appendChild(playersSpan);
+
+  const iconImage = document.getElementById("icon");
+  iconImage.src = status.icon;
+}

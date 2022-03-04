@@ -1,11 +1,7 @@
 :root {
   --primary: #984af7;
   --secondary: rgb(145, 145, 255);
-  --gradient: linear-gradient(
-    45deg,
-    rgba(119, 118, 255, 1) 0%,
-    rgba(174, 44, 241, 1) 100%
-  );
+  --gradient: linear-gradient(45deg, rgba(119, 118, 255, 1) 0%, rgba(174, 44, 241, 1) 100%);
   /* --primary: #e25a00;
   --secondary: #ff6c0a;
   --gradient: linear-gradient(45deg, #ff8533 0%, var(--primary) 100%); */
@@ -15,8 +11,8 @@
 }
 html {
   position: relative;
-  height: 100%;
-  width: 100%;
+  min-height: 100%;
+  min-width: 100%;
 
   font-family: "Open Sans", sans-serif;
   scroll-behavior: smooth;
@@ -39,6 +35,7 @@ h1 {
 
   background: var(--primary);
   background: var(--gradient);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -251,7 +248,7 @@ section.home .logo {
 section.content {
   flex-direction: column;
   width: 100%;
-  margin-bottom: 300px;
+  margin-bottom: 15vh;
 }
 section.content .mask {
   display: flex;
